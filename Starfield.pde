@@ -75,10 +75,12 @@ class OddballParticle extends Particle{
       x = 500;
       y = 500;
     }
-    c = color(255);
+    c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
  }
  void show(){
-  image(img, x, y, width/10, height/10);
+  //image(img, x, y, width/10, height/10);
+  fill(c);
+  ellipse(x,y,20,20);
  }
  void update(){
    if(d == 1){
