@@ -87,19 +87,34 @@ class OddballParticle extends Particle{
    x+=(int)(Math.random()*4)-1;
    y+=(int)(Math.random()*4)-1;
    }else if(d == 2){
-   x-= 0.5;
+   x-= 0.75;
    y+=(int)(Math.random()*4)-1;
    }else if(d ==3){
    x+=(int)(Math.random()*4)-1;
-   y-=0.5;
+   y-=0.75;
    }else if(d == 4){
-   x-=0.5;
-   y-=0.5;
+   x-=0.75;
+   y-=0.75;
    }
-   if(y >500){
-     x = 0;
-     y = 0;
+   if(y > 500){
+    d = (int)(Math.random()*4)+1;
+    c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    if(d == 1){
+      x = 0;
+      y = 0;
+    }else if(d == 2){
+      x = 500;
+      y = 0;
+    }else if(d == 3){
+      x = 0;
+      y = 500;
+    }else if(d ==4){
+      x = 500;
+      y = 500;
+    }
    }else if(y < 0){
+     d = (int)(Math.random()*4)+1;
+     c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
      if(d == 1){
       x = 0;
       y = 0;
@@ -114,6 +129,8 @@ class OddballParticle extends Particle{
       y = 500;
     }
  }else if(x < 0){
+   d = (int)(Math.random()*4)+1;
+   c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
    if(d == 1){
       x = 0;
       y = 0;
@@ -128,6 +145,8 @@ class OddballParticle extends Particle{
       y = 500;
     }
  }else if(x > 500){
+   d = (int)(Math.random()*4)+1;
+   c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
    if(d == 1){
       x = 0;
       y = 0;
