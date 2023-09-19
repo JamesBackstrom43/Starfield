@@ -4,7 +4,10 @@ PImage img;
 void setup(){
   background(0);
   size(500,500);
-  img = loadImage("download.jpeg");
+  img = loadImage("garfieldtake3.jpeg");
+  //img = loadImage("IMG_1233.jpeg");
+  //img = loadImage("download.jpeg");
+  //img = loadImage("IMG_9981.jpeg");
   for(int i = 1; i < stars.length; i++) {
     stars[i] = new Particle(); 
     stars[0] = new OddballParticle();
@@ -56,7 +59,9 @@ void show(){
   float sx = map(x / z, 0, 1, 0, width);
   float sy = map(y / z, 0, 1, 0, width);
   float s = map(z, 0, width, 8, 0);
-  ellipse(sx,sy,s,s); 
+  image(img, sx, sy, s*10, s*10);
+  //image(img, sx, sy, s*15, s*15);
+  //ellipse(sx,sy,s,s); 
 }   
 }
 class OddballParticle extends Particle{
@@ -78,9 +83,8 @@ class OddballParticle extends Particle{
     c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
  }
  void show(){
-  //image(img, x, y, width/10, height/10);
-  fill(c);
-  ellipse(x,y,20,20);
+  fill(255);
+  ellipse(x,y,10,10);
  }
  void update(){
    if(d == 1){
@@ -93,8 +97,8 @@ class OddballParticle extends Particle{
    x+=(int)(Math.random()*4)-1;
    y-=0.75;
    }else if(d == 4){
-   x-=0.75;
-   y-=0.75;
+   x-=(int)(Math.random()*4)-1;
+   y-=(int)(Math.random()*4)-1;
    }
    if(y > 500){
     d = (int)(Math.random()*4)+1;
