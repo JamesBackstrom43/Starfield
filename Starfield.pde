@@ -4,7 +4,7 @@ PImage img;
 void setup(){
   background(0);
   size(500,500);
-  img = loadImage("garfieldtake3.jpeg");
+  //img = loadImage("garfieldtake3.jpeg");
   //img = loadImage("IMG_1233.jpeg");
   //img = loadImage("download.jpeg");
   //img = loadImage("IMG_9981.jpeg");
@@ -59,9 +59,9 @@ void show(){
   float sx = map(x / z, 0, 1, 0, width);
   float sy = map(y / z, 0, 1, 0, width);
   float s = map(z, 0, width, 8, 0);
-  image(img, sx, sy, s*10, s*10);
+  //image(img, sx, sy, s*10, s*10);
   //image(img, sx, sy, s*15, s*15);
-  //ellipse(sx,sy,s,s); 
+  ellipse(sx,sy,s,s); 
 }   
 }
 class OddballParticle extends Particle{
